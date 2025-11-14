@@ -17,12 +17,13 @@ add_action('rest_api_init', function () {
 });
 
 function wmlinks_chat_gp_handler(\WP_REST_Request $request) {
-	$api_key = defined('OPENAI_API_KEY') ? OPENAI_API_KEY : getenv('OPENAI_API_KEY');
+	$has_constant = defined('OPENAI_API_KEY');
+	$api_key = $has_constant ? OPENAI_API_KEY : getenv('OPENAI_API_KEY');
 	if (!$api_key) {
 		return new \WP_REST_Response([
 			'error' => 'OpenAI API key not configured. Define OPENAI_API_KEY in wp-config.php.',
 			'debug' => [
-				'hasOPENAI_API_KEY' => defined('OPENAI_API_KEY') || !!getenv('OPENAI_API_KEY')
+				'hasOPENAI_API_KEY' => $has_constant || !!getenv('OPENAI_API_KEY')
 			]
 		], 500);
 	}
