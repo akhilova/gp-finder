@@ -723,7 +723,7 @@ input::placeholder, textarea::placeholder, select::placeholder { font-weight: 50
       `Opening cue: Reference ${openingReference} in the first sentence so it feels personal.`,
       `Compliment cue: ${complimentCue}.`,
       `Credibility cue: ${credibilityHint}.`,
-      'Forbidden openings: never use "I hope this finds you well" or "Hope you\'s doing well".',
+      'Forbidden openings: never use "I hope this finds you well" or "Hope you\'re doing well".',
       '',
       `Write the email as if you represent ${normalizedDomain || 'our brand'} and want to contribute a valuable, relevant guest post to the listed publication(s).`
     ].join('\n');
